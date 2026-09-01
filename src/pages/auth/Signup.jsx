@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabaseClient.js'
-import './SignUp.css'
+import './Signup.css'
 
 function SignUp() {
   const navigate = useNavigate()
