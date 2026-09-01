@@ -1,0 +1,1327 @@
+
+/* =========================================================
+   DAYFLOW — EMPLOYEE PROFILE
+   FINAL POLISHED UI
+========================================================= */
+
+.employee-profile-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(16, 185, 129, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 0% 35%,
+      rgba(59, 130, 246, 0.035),
+      transparent 25%
+    ),
+    #f7f9fb;
+  color: #1b2926;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.profile-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  padding: 30px 0 24px;
+
+  border-bottom: 1px solid #e5ebea;
+}
+
+.profile-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #079875;
+
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 850;
+
+  letter-spacing: 1.15px;
+}
+
+.profile-page-header h1 {
+  margin: 0;
+
+  color: #14231f;
+
+  font-size: 31px;
+  line-height: 1.15;
+
+  font-weight: 850;
+
+  letter-spacing: -0.9px;
+}
+
+.profile-page-header p {
+  margin: 7px 0 0;
+
+  color: #778681;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.profile-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 36px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dce6e3;
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #35443f;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-back-button:hover {
+  transform: translateY(-1px);
+
+  border-color: #a8d7c9;
+
+  color: #087f67;
+
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   CONTENT WIDTH
+========================================================= */
+
+.profile-content {
+  width: min(100% - 48px, 1060px);
+
+  margin: 0 auto;
+
+  padding: 28px 0 56px;
+}
+
+
+/* =========================================================
+   PROFILE HERO
+========================================================= */
+
+.profile-hero-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 23px;
+
+  overflow: hidden;
+
+  padding: 27px 28px;
+
+  border: 1px solid #dceae5;
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f3fbf8 100%
+    );
+
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.055);
+}
+
+.profile-hero-card::before {
+  content: '';
+
+  position: absolute;
+
+  right: -85px;
+  top: -120px;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(16, 185, 129, 0.09),
+      rgba(16, 185, 129, 0)
+    );
+
+  pointer-events: none;
+}
+
+.profile-hero-card::after {
+  content: '';
+
+  position: absolute;
+
+  right: 22px;
+  bottom: -65px;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(59, 130, 246, 0.025);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.profile-avatar-wrapper {
+  position: relative;
+  z-index: 2;
+
+  flex: 0 0 auto;
+}
+
+.profile-avatar-image,
+.profile-avatar-placeholder {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+}
+
+.profile-avatar-image {
+  display: block;
+
+  object-fit: cover;
+
+  border: 4px solid #ffffff;
+
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.13);
+}
+
+.profile-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 4px solid #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dff8ef,
+      #bfeadf
+    );
+
+  color: #078463;
+
+  font-size: 29px;
+  font-weight: 850;
+
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.1);
+}
+
+
+/* =========================================================
+   HERO INFORMATION
+========================================================= */
+
+.profile-hero-info {
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 7px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: #e8faf3;
+
+  color: #087f67;
+
+  font-size: 8px;
+  line-height: 1;
+
+  font-weight: 850;
+
+  letter-spacing: 0.8px;
+}
+
+.profile-hero-info h2 {
+  margin: 0;
+
+  color: #13221e;
+
+  font-size: 26px;
+  line-height: 1.15;
+
+  font-weight: 850;
+
+  letter-spacing: -0.8px;
+}
+
+.profile-position {
+  margin: 5px 0 0 !important;
+
+  color: #64736e;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.profile-meta-row {
+  display: flex;
+
+  gap: 34px;
+
+  margin-top: 16px;
+}
+
+.profile-meta-row span {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: #96a39f;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.65px;
+}
+
+.profile-meta-row strong {
+  color: #30403b;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   JOINING DATE
+========================================================= */
+
+.profile-hero-side {
+  position: relative;
+  z-index: 2;
+
+  min-width: 135px;
+
+  padding-left: 24px;
+
+  border-left: 1px solid #dce7e4;
+}
+
+.profile-hero-side span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #99a5a1;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+}
+
+.profile-hero-side strong {
+  color: #30403b;
+
+  font-size: 11px;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.profile-section {
+  margin-top: 31px;
+}
+
+.profile-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 14px;
+}
+
+.profile-section-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #079875;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  font-weight: 850;
+
+  letter-spacing: 1px;
+}
+
+.profile-section-heading h3 {
+  margin: 0;
+
+  color: #192a25;
+
+  font-size: 16px;
+
+  line-height: 1.2;
+
+  font-weight: 850;
+
+  letter-spacing: -0.2px;
+}
+
+.profile-section-heading p {
+  margin: 4px 0 0;
+
+  color: #84918d;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.read-only-label {
+  flex: 0 0 auto;
+
+  padding: 6px 9px;
+
+  border: 1px solid #e3e9e7;
+
+  border-radius: 7px;
+
+  background: #f4f6f6;
+
+  color: #818d89;
+
+  font-size: 8px;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   PERSONAL INFORMATION
+========================================================= */
+
+.profile-information-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.profile-information-card {
+  min-height: 91px;
+
+  padding: 18px;
+
+  border: 1px solid #e0e7e5;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-information-card:hover {
+  transform: translateY(-1px);
+
+  border-color: #d3e5df;
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.045);
+}
+
+.information-label,
+.profile-information-card label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #98a39f;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  font-weight: 850;
+
+  letter-spacing: 0.85px;
+}
+
+.profile-information-card strong {
+  display: block;
+
+  color: #25352f;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  font-weight: 750;
+}
+
+.information-note {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #a0aaa7;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   EDITABLE FIELDS
+========================================================= */
+
+.editable-information {
+  border-color: #d4e9e1;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fbfffd
+    );
+}
+
+.editable-information input,
+.editable-information textarea,
+.picture-editor-content input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d6e2de;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #25352f;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.editable-information input {
+  height: 36px;
+
+  padding: 0 11px;
+}
+
+.editable-information textarea {
+  min-height: 72px;
+
+  padding: 9px 11px;
+
+  resize: vertical;
+}
+
+.editable-information input::placeholder,
+.editable-information textarea::placeholder,
+.picture-editor-content input::placeholder {
+  color: #b2bbb8;
+}
+
+.editable-information input:hover,
+.editable-information textarea:hover,
+.picture-editor-content input:hover {
+  border-color: #b9d7cd;
+}
+
+.editable-information input:focus,
+.editable-information textarea:focus,
+.picture-editor-content input:focus {
+  border-color: #55b99f;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(16, 185, 129, 0.09);
+}
+
+.editable-information > span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #079875;
+
+  font-size: 8px;
+
+  font-weight: 750;
+}
+
+.address-card {
+  min-height: 129px;
+}
+
+
+/* =========================================================
+   JOB INFORMATION
+========================================================= */
+
+.job-information-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.job-information-item {
+  padding: 18px;
+
+  border: 1px solid #e0e7e5;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.job-information-item:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.045);
+}
+
+.job-information-item span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #99a4a1;
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.8px;
+}
+
+.job-information-item strong {
+  color: #283833;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   PROFILE PICTURE
+========================================================= */
+
+.profile-picture-editor {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 20px;
+
+  border: 1px solid #e0e7e5;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.025);
+}
+
+.picture-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 78px;
+  height: 78px;
+
+  overflow: hidden;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e6faf3,
+      #c8eee3
+    );
+
+  color: #078463;
+
+  font-size: 22px;
+
+  font-weight: 850;
+
+  box-shadow:
+    0 5px 16px rgba(15, 23, 42, 0.08);
+}
+
+.picture-preview img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.picture-editor-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.picture-editor-content label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #929e9a;
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.8px;
+}
+
+.picture-editor-content input {
+  height: 37px;
+
+  padding: 0 11px;
+}
+
+.picture-editor-content small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #9ca7a4;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SAVE BAR
+========================================================= */
+
+.profile-save-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 30px;
+
+  padding: 18px 0 5px;
+
+  border-top: 1px solid #e3e9e7;
+}
+
+.profile-save-actions {
+  display: flex;
+
+  gap: 9px;
+}
+
+.profile-primary-button,
+.profile-secondary-button {
+  min-width: 108px;
+  min-height: 37px;
+
+  padding: 0 15px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.profile-primary-button {
+  border: 1px solid #07896d;
+
+  background:
+    linear-gradient(
+      135deg,
+      #079875,
+      #078d70
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 6px 14px rgba(7, 152, 117, 0.18);
+}
+
+.profile-primary-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 20px rgba(7, 152, 117, 0.24);
+}
+
+.profile-primary-button:active {
+  transform: translateY(0);
+}
+
+.profile-primary-button:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+
+  transform: none;
+}
+
+.profile-secondary-button {
+  border: 1px solid #dce5e2;
+
+  background: #ffffff;
+
+  color: #52615d;
+}
+
+.profile-secondary-button:hover {
+  border-color: #bdd8d0;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SUCCESS / ERROR
+========================================================= */
+
+.profile-success,
+.profile-error {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+
+  padding: 0 10px;
+
+  border-radius: 7px;
+
+  font-size: 9px;
+
+  font-weight: 750;
+}
+
+.profile-success {
+  background: #e9faf4;
+
+  color: #087f67;
+}
+
+.profile-error {
+  background: #fff1f1;
+
+  color: #c53d3d;
+}
+
+
+/* =========================================================
+   ERROR PAGE
+========================================================= */
+
+.profile-error-card {
+  width: min(100% - 40px, 500px);
+
+  margin: 100px auto;
+
+  padding: 38px;
+
+  text-align: center;
+
+  border: 1px solid #e1e8e5;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 35px rgba(15, 23, 42, 0.07);
+}
+
+.profile-error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: #fff1f1;
+
+  color: #d04444;
+
+  font-weight: 850;
+}
+
+.profile-error-card h2 {
+  margin: 0 0 7px;
+
+  color: #25352f;
+
+  font-size: 19px;
+}
+
+.profile-error-card p {
+  margin: 0 0 21px;
+
+  color: #84908c;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.profile-loading-card {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  width: min(100% - 40px, 700px);
+
+  margin: 100px auto;
+
+  padding: 26px;
+
+  border: 1px solid #e2e8e6;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+.profile-loading-circle {
+  width: 72px;
+  height: 72px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #edf4f2,
+      #f6f9f8,
+      #edf4f2
+    );
+
+  background-size: 200% 100%;
+
+  animation: profileSkeleton 1.4s ease infinite;
+}
+
+.profile-loading-line {
+  width: 190px;
+  height: 9px;
+
+  margin-top: 9px;
+
+  border-radius: 99px;
+
+  background: #edf2f1;
+
+  animation: profileSkeleton 1.4s ease infinite;
+}
+
+.profile-loading-line.large {
+  width: 260px;
+  height: 13px;
+}
+
+@keyframes profileSkeleton {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .profile-page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .profile-hero-card {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .profile-hero-side {
+    width: 100%;
+
+    min-width: 0;
+
+    padding-top: 16px;
+    padding-left: 0;
+
+    border-top: 1px solid #dce7e4;
+    border-left: 0;
+  }
+
+  .job-information-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .profile-content {
+    width: min(100% - 24px, 1060px);
+
+    padding-top: 20px;
+  }
+
+  .profile-page-header {
+    padding-top: 22px;
+  }
+
+  .profile-page-header h1 {
+    font-size: 26px;
+  }
+
+  .profile-information-grid,
+  .job-information-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-hero-card {
+    padding: 21px;
+  }
+
+  .profile-avatar-image,
+  .profile-avatar-placeholder {
+    width: 82px;
+    height: 82px;
+  }
+
+  .profile-hero-info h2 {
+    font-size: 22px;
+  }
+
+  .profile-meta-row {
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .profile-picture-editor {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .profile-save-section {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .profile-save-actions {
+    width: 100%;
+  }
+
+  .profile-save-actions button {
+    flex: 1;
+  }
+}
+
+
+/* =========================================================
+   FINAL READABILITY + IDENTITY REFINEMENT
+========================================================= */
+
+/* Stronger employee identity */
+
+.profile-hero-info h2 {
+  font-size: 29px;
+  letter-spacing: -0.9px;
+}
+
+.profile-position {
+  font-size: 12px;
+  color: #60716b;
+}
+
+.profile-meta-row strong {
+  font-size: 11px;
+}
+
+
+/* Make important information easier to scan */
+
+.profile-information-card strong {
+  font-size: 13px;
+}
+
+.job-information-item strong {
+  font-size: 12px;
+}
+
+.information-note {
+  font-size: 9px;
+}
+
+.job-information-item span {
+  font-size: 8.5px;
+}
+
+
+/* Slightly larger editable fields */
+
+.editable-information input,
+.editable-information textarea,
+.picture-editor-content input {
+  font-size: 11px;
+}
+
+.editable-information > span {
+  font-size: 9px;
+}
+
+
+/* Better profile avatar */
+
+.profile-avatar-image,
+.profile-avatar-placeholder {
+  width: 104px;
+  height: 104px;
+}
+
+.profile-avatar-placeholder {
+  font-size: 31px;
+  font-weight: 850;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dff9f0 0%,
+      #b8eadc 100%
+    );
+
+  color: #067b61;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Stronger hero card */
+
+.profile-hero-card {
+  padding: 29px 30px;
+
+  border-radius: 21px;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* More comfortable section headings */
+
+.profile-section-heading h3 {
+  font-size: 17px;
+}
+
+.profile-section-heading p {
+  font-size: 9.5px;
+}
+
+
+/* More comfortable card spacing */
+
+.profile-information-card,
+.job-information-item {
+  padding: 19px;
+}
+
+
+/* Better URL area */
+
+.picture-editor-content input {
+  height: 40px;
+}
+
+.picture-editor-content small {
+  font-size: 9px;
+}
+
+
+/* Stronger action buttons */
+
+.profile-primary-button,
+.profile-secondary-button {
+  min-height: 39px;
+
+  font-size: 10.5px;
+}
+
+
+/* Success message */
+
+.profile-success {
+  font-size: 9.5px;
+  min-height: 32px;
+}
+
+
+/* Mobile adjustment */
+
+@media (max-width: 600px) {
+  .profile-avatar-image,
+  .profile-avatar-placeholder {
+    width: 88px;
+    height: 88px;
+  }
+
+  .profile-hero-info h2 {
+    font-size: 24px;
+  }
+
+  .profile-information-card strong,
+  .job-information-item strong {
+    font-size: 12px;
+  }
+}
